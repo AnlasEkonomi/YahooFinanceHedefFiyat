@@ -1,0 +1,2 @@
+# YahooFinanceHedefFiyat
+ 
