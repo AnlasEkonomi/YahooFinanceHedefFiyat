@@ -18,7 +18,7 @@ def hisseler():
 def hedef_fiyat():
     hisse=Ticker(hisseler())
     hisse_dict=hisse.financial_data
-    df=pd.DataFrame.from_dict(hisse_dict,orient="index").iloc[:,1:6].reset_index()
+    df=pd.DataFrame.from_dict(hisse_dict).T.reset_index().iloc[:,[0,2,24,25,26,27]]
     df.columns=["Hisse Adı","Güncel Fiyat","En Yüksek Tahmin","En Düşük Tahmin",
             "Ortalama Tahmin","Medyan Tahmin"]
     df["Hisse Adı"]=df["Hisse Adı"].str.replace(".IS","",regex=False)
